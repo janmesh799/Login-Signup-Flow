@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.signup-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.signup-img-container {
+  width: 50%;
+  height: 98%;
+  margin: 0rem 0rem 2rem 2rem;
+  background-image: url("../../images/Aeroplane.jpg");
+}
+.signup-form-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: -2rem 0rem 0rem 3rem;
+}
+
+.signin-top-button-container {
+  width: 100%;
+  margin: 2rem 0rem 2rem 0rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signin-top-button-container button {
+  width: 8rem;
+  height: 3rem;
+  border: none;
+  background: none;
+  border: 2.5px solid #4127d4;
+  padding: 0.5rem;
+  margin: 2rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+.signin-top-button-container button:hover {
+  animation: 0.5s newColor linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.heading-text {
+  color: #5832dd;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  margin: 0 2rem;
+  letter-spacing: 0.1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.input-field {
+  border: 1px solid gray;
+  margin: 1rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  padding: 0rem 1rem;
+  letter-spacing: 0.01rem;
+}
+.input-field:focus {
+  outline: none;
+}
+.signup-submit-button {
+  display: flex;
+  justify-content: center;
+}
+.signup-submit-button button {
+  width: 90%;
+  display: flex;
+  height: 2.5rem;
+  border: none;
+  background: #4127d4;
+  color: white;
+  margin: 1.5rem 0rem 0rem 0rem;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #4127d4;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+}
+.signup-submit-button button:hover {
+  animation: 0.5s emptyColor linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes newColor {
+  0% {
+    background-color: none;
+  }
+  50% {
+    background-color: #4127d480;
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+  }
+  100% {
+    background-color: #4127d4;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 1.5rem;
+  }
+}
+@keyframes emptyColor {
+  0% {
+  }
+  50% {
+    background-color: #4127d480;
+    color: #4127d477;
+
+    border-radius: 1rem;
+    font-weight: 500;
+  }
+  100% {
+    background-color: white;
+    color: #4127d4;
+    border-radius: 1.5rem;
+    font-weight: 800;
+  }
+}

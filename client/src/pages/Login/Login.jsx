@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthLogin } from "../../store/Auth/AuthSlice";
-import setErrorValueNull from "../../store/Auth/AuthSlice";
+import {setErrorValueNull} from "../../store/Auth/AuthSlice";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -27,9 +27,10 @@ const Login = () => {
     dispatch(AuthLogin(creds));
   };
   useEffect(() => {
+    document.title = "Login | Login Signup Flow";
     if (isError) {
       toast.error(errorMessage);
-      dispatch(setErrorValueNull);
+      dispatch(setErrorValueNull());
     }
     if (isLoggedIn) {
       navigate("/");

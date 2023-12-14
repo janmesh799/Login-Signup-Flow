@@ -3,7 +3,7 @@ import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
-import setErrorValueNull from "../../store/Auth/AuthSlice";
+import {setErrorValueNull} from "../../store/Auth/AuthSlice";
 import { AuthSignup } from "../../store/Auth/AuthSlice";
 import { toast } from "react-toastify";
 import checkStrongPass from "../../utils/checkStrongPass";
@@ -49,6 +49,7 @@ const Signup = () => {
     dispatch(AuthSignup(creds));
   };
   useEffect(() => {
+    document.title = "Signup | Login Signup Flow";
     if (isLoggedIn) {
       navigate("/");
     }
@@ -56,7 +57,7 @@ const Signup = () => {
   useEffect(() => {
     if (isError) {
       toast.error(errorMessage);
-      dispatch(setErrorValueNull);
+      dispatch(setErrorValueNull());
     }
   }, [isError, errorMessage,dispatch]);
   return (

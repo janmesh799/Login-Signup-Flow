@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/Auth/AuthSlice";
 
 const Home = () => {
+  useEffect(()=>{
+    document.title = "Home | Login Signup Flow";
+
+  })
   const dispatch = useDispatch();
   const { isLoggedIn, user } = useSelector((state) => state.auth);
   if (isLoggedIn) {

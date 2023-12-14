@@ -20,7 +20,7 @@ export const AuthSignup = createAsyncThunk(
       const response = await AuthService.signup(userData);
       if (response.success) return response;
       else {
-        throw new Error(response.error.error);
+        throw new Error(response.error.message);
       }
     } catch (error) {
       const message =
@@ -42,7 +42,7 @@ export const AuthLogin = createAsyncThunk(
       const response = await AuthService.login(userData);
       if (response.success) return response;
       else {
-        throw new Error(response.error.error);
+        throw new Error(response.error.message);
       }
     } catch (error) {
       const message =
@@ -70,7 +70,7 @@ const AuthSlice = createSlice({
     },
     setErrorValueNull: (state) => {
       state.isError = false;
-      state.errorMessage = "";
+      state.errorMessage = null;
     },
   },
   extraReducers: (builder) => {
@@ -116,5 +116,5 @@ const AuthSlice = createSlice({
   },
 });
 
-export const { logout } = AuthSlice.actions;
+export const { logout, setErrorValueNull } = AuthSlice.actions;
 export default AuthSlice.reducer;

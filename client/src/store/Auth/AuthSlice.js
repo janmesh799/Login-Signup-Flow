@@ -20,7 +20,7 @@ export const AuthSignup = createAsyncThunk(
       const response = await AuthService.signup(userData);
       if (response.success) return response;
       else {
-        throw new Error(response.error.message);
+        throw new Error(response.error.message || response.error.message);
       }
     } catch (error) {
       const message =

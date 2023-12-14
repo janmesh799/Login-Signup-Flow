@@ -11,10 +11,8 @@ const Login = async (req, res) => {
     email = email.toLowerCase();
     const user = await User.findOne({ email });
     if (!user) {
-      res
-        .status(403)
-        .json({ success: false, message: "email or password is incorrect" });
-      return;
+      errorCode = 403;
+      throw new Error("email or password is incorrect");
     }
     const savedPassword = user.password;
     const verified = await bcrypt.compare(password, savedPassword);
@@ -25,7 +23,7 @@ const Login = async (req, res) => {
     const data = {
       email,
       name: user.name,
-      userId: user._id
+      userId: user._id,
     };
     const authToken = json.sign(data, SecretKey);
     res.status(200).json({

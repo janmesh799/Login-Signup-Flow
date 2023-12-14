@@ -1,1 +1,1 @@
-export const baseUrl = ""
+export const baseUrl = "https://login-signup-flow-backend.vercel.app/";

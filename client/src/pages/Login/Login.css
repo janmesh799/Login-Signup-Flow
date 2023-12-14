@@ -63,7 +63,6 @@ form {
   border-radius: 0.25rem;
   padding: 0rem 1rem;
   letter-spacing: 0.01rem;
-
 }
 .input-field:focus {
   outline: none;
@@ -86,7 +85,6 @@ form {
   cursor: pointer;
   font-weight: 300;
   font-size: 1.25rem;
-  text-align: center;
   letter-spacing: 0.1rem;
 }
 .signup-submit-button button:hover {
@@ -98,7 +96,7 @@ form {
   position: absolute;
   width: 50vw;
   height: 50vh;
-  background-color: rgba(16, 6, 37, 0.75);
+  background-color: rgba(24, 10, 54, 0.75);
   bottom: 0;
   left: 0;
   text-align: center;
